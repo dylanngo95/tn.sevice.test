@@ -1,5 +1,5 @@
-Project web api use typescript
-Example Typescript and Swagger
+
+Example Web-Api Typescript and Swagger
 
 # Install project in local workstation
 
