@@ -16,6 +16,7 @@ const models: TsoaRoute.Models = {
             "id": { "dataType": "double", "required": true },
             "address": { "dataType": "string" },
             "name": { "dataType": "string", "required": true },
+            "token": { "dataType": "string" },
             "users": { "dataType": "array", "array": { "ref": "User" } },
             "fields": { "dataType": "array", "array": { "dataType": "string" } },
         },

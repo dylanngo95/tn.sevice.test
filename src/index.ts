@@ -22,3 +22,5 @@ RegisterRoutes(app);
 console.log('Starting server on port 3000...');
 console.log('Go to url: http://localhost:3000/docs');
 app.listen(3000);
+
+export default app;

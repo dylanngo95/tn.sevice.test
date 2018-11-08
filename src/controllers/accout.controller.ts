@@ -8,8 +8,9 @@ export class AccountsController {
     @Get('Current')
     public async current(): Promise<TestAccount> {
         return {
-            id: 600,
-            name: 'test'
+            id: 1,
+            name: 'user name 123',
+            token: 'Athor: sdad232ad32asdadsdadasdaddsdwqw12',
         };
     }
 
@@ -18,12 +19,12 @@ export class AccountsController {
     public async getUsers(): Promise<User[]> {
         return [
             {
-                createdAt: new Date(),
+                createdAt: new Date('1995-02-02'),
                 email: 'test@test.com',
                 id: 1
             },
             {
-                createdAt: new Date(),
+                createdAt: new Date('1995-02-02'),
                 email: 'test2@test2.com',
                 id: 2,
             }
