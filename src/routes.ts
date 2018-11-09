@@ -8,7 +8,7 @@ const models: TsoaRoute.Models = {
         "properties": {
             "id": { "dataType": "double", "required": true },
             "email": { "dataType": "string", "required": true },
-            "createdAt": { "dataType": "datetime", "required": true },
+            "createdAt": { "dataType": "datetime" },
         },
     },
     "TestAccount": {
@@ -60,6 +60,25 @@ export function RegisterRoutes(app: any) {
 
 
             const promise = controller.current.apply(controller, validatedArgs);
+            promiseHandler(controller, promise, response, next);
+        });
+    app.post('/v1/Accounts/Add',
+        function(request: any, response: any, next: any) {
+            const args = {
+                account: { "in": "body", "name": "account", "required": true, "ref": "TestAccount" },
+            };
+
+            let validatedArgs: any[] = [];
+            try {
+                validatedArgs = getValidatedArgs(args, request);
+            } catch (err) {
+                return next(err);
+            }
+
+            const controller = new AccountsController();
+
+
+            const promise = controller.addUser.apply(controller, validatedArgs);
             promiseHandler(controller, promise, response, next);
         });
     app.get('/v1/Accounts/Users',

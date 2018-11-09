@@ -1,16 +1,27 @@
 import {TestAccount} from '../models/accout.model';
-import {Route, Get} from 'tsoa';
+import {Route, Get, Post, Body} from 'tsoa';
 import {User} from '../models/user.model';
 
 @Route('Accounts')
 export class AccountsController {
+    
     /** Get the current account */
     @Get('Current')
     public async current(): Promise<TestAccount> {
         return {
             id: 1,
             name: 'user name 123',
-            token: 'Athor: sdad232ad32asdadsdadasdaddsdwqw12',
+            token: '12345678901234567890010',
+        };
+    }
+
+    /** Add User */
+    @Post('Add')
+    public async addUser(@Body() account: TestAccount): Promise<TestAccount> {
+        return {
+            id: account.id,
+            name: account.name,
+            address: account.address,
         };
     }
 
@@ -19,12 +30,10 @@ export class AccountsController {
     public async getUsers(): Promise<User[]> {
         return [
             {
-                createdAt: new Date('1995-02-02'),
                 email: 'test@test.com',
-                id: 1
+                id: 1,
             },
             {
-                createdAt: new Date('1995-02-02'),
                 email: 'test2@test2.com',
                 id: 2,
             }

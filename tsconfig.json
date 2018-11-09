@@ -8,6 +8,6 @@
       "experimentalDecorators": true
   },
   "exclude": [
-    "test/**"
+    "__test__/**"
   ]
 }

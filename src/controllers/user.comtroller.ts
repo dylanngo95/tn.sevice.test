@@ -10,10 +10,8 @@ export class UsersController extends Controller {
       let user: User = {
         email: 'tinhngo@gmail.com',
         id: id,
-        createdAt: new Date()
       };  
       return Promise.resolve(user);;
-
     }
    
 }

@@ -18,9 +18,10 @@ app.use(methodOverride());
 
 RegisterRoutes(app);
 
-/* tslint:disable-next-line */
+app.listen(3000);
+
 console.log('Starting server on port 3000...');
 console.log('Go to url: http://localhost:3000/docs');
-app.listen(3000);
+
 
 export default app;
