@@ -1,4 +1,4 @@
-import app from '../index';
+import { server, app } from '../index';
 import * as chai from 'chai';
 import chaiHttp = require('chai-http');
 let should = chai.should();
@@ -39,6 +39,7 @@ describe('Add account', () => {
       res.body.should.have.property('address');
       done();
     });
-
   });
 });
+
+server.close();

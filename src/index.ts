@@ -18,10 +18,13 @@ app.use(methodOverride());
 
 RegisterRoutes(app);
 
-app.listen(3000);
+const server = app.listen(3000);
 
 console.log('Starting server on port 3000...');
 console.log('Go to url: http://localhost:3000/docs');
 
+export {
+    server,
+    app,
+}
 
-export default app;
