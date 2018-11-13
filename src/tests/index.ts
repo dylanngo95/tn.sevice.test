@@ -42,4 +42,4 @@ describe('Add account', () => {
   });
 });
 
-server.close();
+// server.close();
