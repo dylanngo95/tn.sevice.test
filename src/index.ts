@@ -18,10 +18,11 @@ app.use(methodOverride());
 
 RegisterRoutes(app);
 
-const server = app.listen(3000);
+const port: Number = parseInt(<string>process.env.PORT, 10) || 3000
 
-console.log('Starting server on port 3000...');
-console.log('Go to url: http://localhost:3000/docs');
+const server = app.listen(port, () => {
+    console.log("api start with url: http://localhost:" + (server.address() as any).port);
+});
 
 export {
     server,
